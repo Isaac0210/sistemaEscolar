@@ -2,7 +2,7 @@
 
 $arquivo = __DIR__ . "/dados/usuarios.json";
 $usuarios = json_decode(file_get_contents($arquivo), true);
-
+#versão final
 ?>
 
 <!DOCTYPE html>
@@ -32,9 +32,12 @@ $usuarios = json_decode(file_get_contents($arquivo), true);
                     <input type="email" name="email" required>
                     <label>Informação específica:</label>
                     <input type="text" name="extra" required>
-                    <button type="submit" onclick="this.form.action='teste.php'">
+                    <button type="submit" onclick="this.form.action='cadastro.php'">
                         Cadastrar
                     </button>
+                    <button type="button" onclick="window.location.href='tabela.php'">
+                    Ir para Tabela
+                </button>
                 </form>
             </div>
         </section>

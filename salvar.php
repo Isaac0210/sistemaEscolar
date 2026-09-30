@@ -26,4 +26,5 @@ file_put_contents(
 
 header("Location: index.php");
 exit;
+#versão final
 ?>

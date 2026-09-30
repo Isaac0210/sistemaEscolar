@@ -3,7 +3,7 @@
 $arquivo = __DIR__ . "/dados/usuarios.json";
 
 $usuarios = json_decode(file_get_contents($arquivo), true);
-
+#versão final
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +12,7 @@ $usuarios = json_decode(file_get_contents($arquivo), true);
 <head>
 
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tabela</title>
@@ -26,18 +27,20 @@ $usuarios = json_decode(file_get_contents($arquivo), true);
 
         <section class="principio">
 
-            <div class="container">
+            <div class="container-tabela">
 
                 <h2>Usuários Cadastrados</h2>
 
                 <table>
 
                     <tr>
+
                         <th>Tipo</th>
                         <th>Nome</th>
                         <th>E-mail</th>
                         <th>Informação específica</th>
                         <th>Ação</th>
+
                     </tr>
 
                     <?php foreach ($usuarios as $usuario): ?>
@@ -61,9 +64,11 @@ $usuarios = json_decode(file_get_contents($arquivo), true);
                         </td>
 
                         <td>
+
                             <a href="excluir.php?id=<?php echo urlencode($usuario["id"]); ?>">
                                 Excluir
                             </a>
+
                         </td>
 
                     </tr>

@@ -14,5 +14,5 @@ class funcionario extends Usuario {
         return "Funcionário: {$this->nome}  | Cargo: {$this->coordenador} | Email: {$this->email}";
     }
 }
-
+#versão final
 ?>
