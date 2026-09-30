@@ -25,6 +25,7 @@ $usuarios = json_decode(file_get_contents($arquivo), true);
         <option value="Aluno">Aluno</option>
         <option value="Professor">Professor</option>
         <option value="Funcionario">Funcionário</option>
+        <option value="Coordenador">Coordenador</option>
     </select>
     <label>Nome:</label>
     <input type="text" name="nome" required>

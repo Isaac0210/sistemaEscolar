@@ -11,7 +11,7 @@ class funcionario extends Usuario {
     }
 
     public function exibirInfo(): string {
-        return "Aluno: {$this->nome}  | Disciplina: {$this->cargo} | Email: {$this->email}";
+        return "Funcionário: {$this->nome}  | Cargo: {$this->cargo} | Email: {$this->email}";
     }
 }
 
