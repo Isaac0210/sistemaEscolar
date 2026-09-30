@@ -16,7 +16,3 @@ class Aluno extends Usuario {
         return "Aluno: {this->nome}  | Matricula: {$this->matricula}";
     }
 }
-
-//Professor.php e Funcionario.php:
-//repetir a mesma ideia usando $disciplina e $cargo
-// e implementando exibirinfo().

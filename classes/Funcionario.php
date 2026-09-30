@@ -2,16 +2,16 @@
 
 require_once "Usuario.php";
 
-class Professor extends Usuario {
-    private string $disciplina;
+class funcionario extends Usuario {
+    private string $cargo;
 
-    public function __construct($nome, $email, $disciplina) {
+    public function __construct($nome, $email, $cargo) {
         parent::__construct($nome, $email);
-        $this->disciplina = $disciplina;
+        $this->disciplina = $cargo;
     }
 
     public function exibirInfo(): string {
-        return "Aluno: {$this->nome}  | Disciplina: {$this->matricula}";
+        return "Aluno: {$this->nome}  | Disciplina: {$this->cargo} | Email: {$this->email}";
     }
 }
 

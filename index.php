@@ -8,31 +8,13 @@ $usuarios = json_decode(file_get_contents($arquivo), true);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Início</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h2>Usuários Cadastrados</h2>
-
-<form action="salvar.php" method="post">
-    <label>Tipo:</label>
-    <select name="tipo" require>
-        <option value="Aluno">Aluno</option>
-        <option value="Professor">Professor</option>
-        <option value="Funcionario">Funcionário</option>
-    </select>
-    
-    <label>Nome:</label>
-    <input type="text" name="nome" required>
-    
-    <label>E-mail:</label>
-    <input type="email" name="email" required>
-
-    <label>Informação específica:</label>
-    <input type="text" name="extra" required>
-
-    <button type="submit">Cadastrar</button>
-</form>
+<div class="container"></div>
 
 <?php foreach ($usuarios as $usuario): ?>
     <div>
@@ -40,7 +22,7 @@ $usuarios = json_decode(file_get_contents($arquivo), true);
         - <?=  htmlspecialchars($usuario["tipo"]) ?></strong>
         - <?=  htmlspecialchars($usuario["email"]) ?></strong>
 
-        <a href="excluir.php?id=<?= urlencode($usuarios["id"]) ?>">
+        <a href="excluir.php?id=<?= urlencode($usuario["id"]) ?>">
             Excluir
         </a>
     </div>

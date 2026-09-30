@@ -1,25 +1,27 @@
 <?php
 
-$arquivo = _DIR_ . '/data/usuarios.json';
-$id = $_GET['id'] ?? null "";
+$arquivo = __DIR__ . '/dados/usuarios.json';
+$id = $_GET['id'] ?? null;
 
-$usario = json_decode(
-    file_get_contentes($arquivo),
+$usuarios = json_decode(
+    file_get_contents($arquivo),
     true
 );
 
 $usuario = array_filter(
-    $usuario,
-    fn($usuario) => $usuario['id'] !== $id
+    $usuarios,
+    fn($usuarios) => $usuarios['id'] !== $id
 );
 
 file_put_contents(
+    $arquivo,
     json_encode(
         array_values($usuario),
         JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
     )
 );
 
-Header('Location: index.php');
-
+header('Location: index.php');
 exit;
+
+?>
