@@ -66,7 +66,8 @@ body {
     padding: 0.2rem;
 }
 
-.container form button {
+.container form button,
+.container button {
     width: 100%;
 
     background: rgb(0, 110, 255);
@@ -79,4 +80,32 @@ body {
     color: white;
     font-weight: bold;
     font-size: 1rem;
+
+    cursor: pointer;
+}
+.container table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.container table th,
+.container table td {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.7rem;
+    text-align: center;
+}
+
+.container table th {
+    background-color: rgba(0, 110, 255, 0.7);
+}
+
+.container table td {
+    background-color: rgba(149, 149, 149, 0.2);
+}
+.container table a {
+    background-color: rgb(200, 40, 40);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
 }

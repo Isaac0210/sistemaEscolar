@@ -1,27 +1,27 @@
 <?php
 
-$arquivo = __DIR__ . '/dados/usuarios.json';
-$id = $_GET['id'] ?? null;
+$arquivo = __DIR__ . "/dados/usuarios.json";
 
-$usuarios = json_decode(
-    file_get_contents($arquivo),
-    true
-);
+$usuarios = json_decode(file_get_contents($arquivo), true);
 
-$usuario = array_filter(
-    $usuarios,
-    fn($usuarios) => $usuarios['id'] !== $id
-);
+$id = $_GET["id"];
 
-file_put_contents(
-    $arquivo,
-    json_encode(
-        array_values($usuario),
-        JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
-    )
-);
+foreach ($usuarios as $posicao => $usuario) {
 
-header('Location: index.php');
+    if ($usuario["id"] == $id) {
+
+        unset($usuarios[$posicao]);
+
+        break;
+    }
+}
+
+$usuarios = array_values($usuarios);
+
+file_put_contents($arquivo, json_encode($usuarios, JSON_PRETTY_PRINT));
+
+header("Location: tabela.php");
+
 exit;
 
 ?>
