@@ -14,7 +14,29 @@ $usuarios = json_decode(file_get_contents($arquivo), true);
 
 <body>
 
-<div class="container"></div>
+<main>
+    <section class="principio">
+        <div class="container">
+    <h2>Usuários Cadastrados</h2>
+
+<form action="salvar.php" method="post">
+    <label>Tipo:</label>
+    <select name="tipo" require>
+        <option value="Aluno">Aluno</option>
+        <option value="Professor">Professor</option>
+        <option value="Funcionario">Funcionário</option>
+    </select>
+    <label>Nome:</label>
+    <input type="text" name="nome" required>
+    <label>E-mail:</label>
+    <input type="email" name="email" required>
+    <label>Informação específica:</label>
+    <input type="text" name="extra" required>
+    <button type="submit">Cadastrar</button>
+</form>
+</div>
+    </section>
+</main>
 
 <?php foreach ($usuarios as $usuario): ?>
     <div>
